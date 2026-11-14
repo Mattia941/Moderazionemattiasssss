@@ -1,0 +1,27 @@
+name: Build Minecraft Plugin
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Carica il codice sorgente
+      uses: actions/checkout@v3
+
+    - name: Configura Java (JDK 17)
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: 'maven'
+
+    - name: Compila con Maven
+      run: mvn clean package
+
+    - name: Salva il file .jar
+      uses: actions/upload-artifact@v3
+      with:
+        name: SecretOp-jar
+        path: target/*.jar
