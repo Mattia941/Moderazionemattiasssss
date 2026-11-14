@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Main extends JavaPlugin implements CommandExecutor {
 
     // Inserisci qui il tuo esatto nickname in-game
-    private final String ALLOWED_PLAYER = "TuoNome";
+    private final String ALLOWED_PLAYER = "Mattialascaro";
 
     @Override
     public void onEnable() {
